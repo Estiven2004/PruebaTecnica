@@ -7,6 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+    
 <body>
     <div class="container">
         <header>
@@ -14,41 +15,48 @@
             <p class="subtitle">Innovación y Tecnología para el Aprendizaje</p>
         </header>
 
-        <div class="course-card">
+        <!-- Main Content -->
+        <div id="mainContent" class="course-card">
             <div class="course-header">
                 <div class="course-info">
-                    <h2>Uso de Impresoras 3D</h2>
-                    <p class="course-description">
-                        Aprende desde cero todo lo que necesitas saber sobre impresión 3D. 
-                        Desde los conceptos básicos hasta la creación de tus primeros objetos. 
-                        Un curso práctico y completo que te llevará del diseño a la impresión.
+                    <h2 id="courseTitle">Uso de Impresoras 3D</h2>
+                    <p id="courseDescription" class="course-description">
+                        Un curso introductorio sobre impresión 3D que te enseñará desde los conceptos básicos hasta la creación de objetos funcionales. Aprenderás sobre tipos de impresoras, materiales, software de diseño, y técnicas de impresión para llevar tus ideas del mundo digital al físico.
                     </p>
                 </div>
                 <div class="course-image">
-                    <img src="https://www.brildor.com/blog/wp-content/uploads/2019/04/banner-filamentos-impresoras-3d.jpg" alt="Impresora 3D" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                    <img src="https://www.brildor.com/blog/wp-content/uploads/2019/04/banner-filamentos-impresoras-3d.jpg" alt="Impresora 3D">
                 </div>
             </div>
 
             <div class="course-details">
                 <div class="detail-item">
                     <i class="fas fa-clock"></i>
-                    <div class="detail-title">Duración</div>
-                    <div class="detail-value">12 horas</div>
+                    <div>
+                        <div class="detail-title">Duración</div>
+                        <div id="courseDuration" class="detail-value">12 horas</div>
+                    </div>
                 </div>
                 <div class="detail-item">
                     <i class="fas fa-chart-line"></i>
-                    <div class="detail-title">Nivel</div>
-                    <div class="detail-value">Básico</div>
+                    <div>
+                        <div class="detail-title">Nivel</div>
+                        <div id="courseLevel" class="detail-value">Básico</div>
+                    </div>
                 </div>
                 <div class="detail-item">
                     <i class="fas fa-tags"></i>
-                    <div class="detail-title">Categoría</div>
-                    <div class="detail-value">Tecnología</div>
+                    <div>
+                        <div class="detail-title">Categoría</div>
+                        <div id="courseCategory" class="detail-value">Tecnología</div>
+                    </div>
                 </div>
                 <div class="detail-item">
                     <i class="fas fa-dollar-sign"></i>
-                    <div class="detail-title">Precio</div>
-                    <div class="detail-value">Gratuito</div>
+                    <div>
+                        <div class="detail-title">Precio</div>
+                        <div class="detail-value">Gratuito</div>
+                    </div>
                 </div>
             </div>
 
@@ -59,7 +67,7 @@
                         <i class="fas fa-envelope"></i> Inscribirse
                     </button>
                 </form>
-            </div>            
+            </div>
         </div>
 
         <div class="features">
@@ -91,9 +99,59 @@
             </div>
             <p>Universidad Nacional de Colombia</p>
             <p style="opacity: 0.8;">
-             Facultad de Minas 
+                Facultad de Minas
             </p>
         </footer>
     </div>
+
+    <script>
+        // Función para cargar datos del curso desde la API
+        async function loadCursoData() {
+            console.log('🚀 Iniciando carga de datos del curso...');
+            
+            try {
+                // Hacer petición a la API
+                console.log('📡 Haciendo petición a /api/curso...');
+                const response = await fetch('/api/curso');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const cursoData = await response.json();
+                console.log('✅ Datos recibidos:', cursoData);
+                
+                // Actualizar el DOM con los datos SOLO SI son diferentes
+                if (cursoData.titulo) {
+                    document.getElementById('courseTitle').textContent = cursoData.titulo;
+                }
+                if (cursoData.descripcion) {
+                    document.getElementById('courseDescription').textContent = cursoData.descripcion;
+                }
+                if (cursoData.duracion_horas) {
+                    document.getElementById('courseDuration').textContent = `${cursoData.duracion_horas} horas`;
+                }
+                if (cursoData.nivel) {
+                    document.getElementById('courseLevel').textContent = cursoData.nivel;
+                }
+                if (cursoData.categoria) {
+                    document.getElementById('courseCategory').textContent = cursoData.categoria;
+                }
+                
+                console.log('🎉 Datos cargados exitosamente en el DOM');
+                
+            } catch (error) {
+                console.error('❌ Error cargando datos del curso:', error);
+                // No mostrar error, mantener los datos por defecto
+                console.log('ℹ️ Usando datos por defecto del HTML');
+            }
+        }
+        
+        // Cargar datos cuando se carga la página
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📄 DOM cargado, iniciando carga de datos...');
+            loadCursoData();
+        });
+    </script>
 </body>
 </html>
