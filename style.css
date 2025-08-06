@@ -133,6 +133,24 @@ h1 {
     margin-bottom: 30px;
 }
 
+.cta-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cta-form input[type="email"] {
+    padding: 15px 20px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    width: 300px;
+    max-width: 90%;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.9);
+}
+
 .detail-item {
     background: #f8f9ff;
     padding: 20px;

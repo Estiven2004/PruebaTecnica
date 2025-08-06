@@ -53,10 +53,13 @@
             </div>
 
             <div class="cta-section">
-                <button class="btn-inscribirse" onclick="alert('¡Próximamente disponible! Te notificaremos cuando esté listo.')">
-                    <i class="fas fa-play-circle"></i> Inscríbete Ahora
-                </button>
-            </div>
+                <form class="cta-form" onsubmit="event.preventDefault(); alert('¡Suscripción exitosa!');">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="btn-inscribirse">
+                        <i class="fas fa-envelope"></i> Inscribirse
+                    </button>
+                </form>
+            </div>            
         </div>
 
         <div class="features">
@@ -86,10 +89,9 @@
             <div class="steam-logo">
                 <i class="fas fa-atom"></i> Aula STEAM Sonny Jiménez
             </div>
-            <p>Formando los innovadores del futuro</p>
-            <p style="margin-top: 10px; opacity: 0.8;">
-                <i class="fas fa-envelope"></i> info@aulasteam.edu.co | 
-                <i class="fas fa-phone"></i> +57 (4) 123-4567
+            <p>Universidad Nacional de Colombia</p>
+            <p style="opacity: 0.8;">
+             Facultad de Minas 
             </p>
         </footer>
     </div>
