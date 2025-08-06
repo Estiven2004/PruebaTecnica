@@ -107,11 +107,11 @@
     <script>
         // Función para cargar datos del curso desde la API
         async function loadCursoData() {
-            console.log('🚀 Iniciando carga de datos del curso...');
+            console.log('Iniciando carga de datos del curso...');
             
             try {
                 // Hacer petición a la API
-                console.log('📡 Haciendo petición a /api/curso...');
+                console.log('Haciendo petición a /api/curso...');
                 const response = await fetch('/api/curso');
                 
                 if (!response.ok) {
@@ -119,7 +119,7 @@
                 }
                 
                 const cursoData = await response.json();
-                console.log('✅ Datos recibidos:', cursoData);
+                console.log('Datos recibidos:', cursoData);
                 
                 // Actualizar el DOM con los datos SOLO SI son diferentes
                 if (cursoData.titulo) {
@@ -138,18 +138,18 @@
                     document.getElementById('courseCategory').textContent = cursoData.categoria;
                 }
                 
-                console.log('🎉 Datos cargados exitosamente en el DOM');
+                console.log('Datos cargados exitosamente en el DOM');
                 
             } catch (error) {
-                console.error('❌ Error cargando datos del curso:', error);
+                console.error('Error cargando datos del curso:', error);
                 // No mostrar error, mantener los datos por defecto
-                console.log('ℹ️ Usando datos por defecto del HTML');
+                console.log('ℹUsando datos por defecto del HTML');
             }
         }
         
         // Cargar datos cuando se carga la página
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('📄 DOM cargado, iniciando carga de datos...');
+            console.log('DOM cargado, iniciando carga de datos...');
             loadCursoData();
         });
     </script>
