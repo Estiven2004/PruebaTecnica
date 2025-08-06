@@ -7,7 +7,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, rgb(148, 180, 59) 0%, rgb(76, 120, 44) 100%);
     min-height: 100vh;
 }
 
@@ -66,7 +66,7 @@ h1 {
     color: #333;
     font-size: 2.2em;
     margin-bottom: 15px;
-    background: linear-gradient(45deg, #667eea, #764ba2);
+    background: linear-gradient(45deg, rgb(148, 180, 59), rgb(76, 120, 44));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -103,7 +103,7 @@ h1 {
 }
 
 .image-placeholder {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, rgb(148, 180, 59) 0%, rgb(76, 120, 44) 100%);
     width: 100%;
     height: 100%;
     display: flex;
@@ -148,15 +148,15 @@ h1 {
     font-size: 1em;
     width: 300px;
     max-width: 90%;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.9);
+    box-shadow: 0 4px 15px rgba(148, 180, 59, 0.4);
 }
 
 .detail-item {
-    background: #f8f9ff;
+    background: #f0f5e8;
     padding: 20px;
     border-radius: 12px;
     text-align: center;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid rgb(148, 180, 59);
     transition: transform 0.2s ease;
 }
 
@@ -166,7 +166,7 @@ h1 {
 
 .detail-item i {
     font-size: 2em;
-    color: #667eea;
+    color: rgb(148, 180, 59);
     margin-bottom: 10px;
 }
 
@@ -187,7 +187,7 @@ h1 {
 }
 
 .btn-inscribirse {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, rgb(148, 180, 59), rgb(76, 120, 44));
     color: white;
     padding: 15px 40px;
     border: none;
@@ -198,12 +198,13 @@ h1 {
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 15px rgba(148, 180, 59, 0.4);
 }
 
 .btn-inscribirse:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+    box-shadow: 0 8px 25px rgba(148, 180, 59, 0.6);
+    background: linear-gradient(135deg, rgb(166, 200, 68), rgb(88, 140, 52));
 }
 
 .btn-inscribirse:active {
@@ -224,15 +225,17 @@ h1 {
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: transform 0.3s ease;
+    border-top: 3px solid rgb(148, 180, 59);
 }
 
 .feature:hover {
     transform: translateY(-5px);
+    border-top: 3px solid rgb(166, 200, 68);
 }
 
 .feature i {
     font-size: 2.5em;
-    color: #667eea;
+    color: rgb(148, 180, 59);
     margin-bottom: 15px;
 }
 
@@ -251,7 +254,7 @@ footer {
     color: white;
     margin-top: 50px;
     padding: 30px 0;
-    background: rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, rgba(148, 180, 59, 1) 0%, rgba(76, 120, 44, 1) 100%);
     border-radius: 15px;
 }
 
